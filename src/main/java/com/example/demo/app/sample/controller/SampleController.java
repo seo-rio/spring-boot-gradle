@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Slf4j
 public class SampleController {
 
     private final SampleService service;
@@ -23,9 +24,10 @@ public class SampleController {
     @GetMapping(value = "/api/sample", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> sample() {
 
+        log.debug("TEST");
         Map<String, Object> result = new HashMap<String, Object>();
         result.put("TEST", "HI");
 
-        return new ResponseEntity<Object>("Hello world", HttpStatus.OK);
+        return new ResponseEntity<Object>(result, HttpStatus.OK);
     }
 }
