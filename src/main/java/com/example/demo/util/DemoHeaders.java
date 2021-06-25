@@ -13,14 +13,13 @@ import java.util.Map;
 public class DemoHeaders extends HttpHeaders{
 
     public DemoHeaders(EnumResult result, String mediaType) {
-        super(setHeaders(result));
-        setContentType(MediaType.valueOf(mediaType));
+        super(setHeaders(result, mediaType));
     }
     public DemoHeaders(EnumResult result) {
-        super(setHeaders(result));
+        super(setHeaders(result, null));
     }
 
-    private static HttpHeaders setHeaders(EnumResult result) {
+    private static HttpHeaders setHeaders(EnumResult result, String mediaType) {
         final String RESULT_CODE_NAME = "Server-Result-Code";
         final String RESULT_MESSAGE_NAME = "Server-Result-Message";
 
@@ -29,6 +28,7 @@ public class DemoHeaders extends HttpHeaders{
         header.put(RESULT_MESSAGE_NAME, result.getMsg());
 
         HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.valueOf(mediaType != null ? mediaType : MediaType.APPLICATION_JSON_VALUE));
 
         for (String key : header.keySet()) {
             headers.set(key, String.valueOf(header.get(key)));

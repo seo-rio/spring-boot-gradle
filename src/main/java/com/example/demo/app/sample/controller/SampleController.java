@@ -9,16 +9,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 
 @Api(value = "Swagger Sample Controller")
 @RestController
@@ -75,6 +72,6 @@ public class SampleController {
         SampleModel model = new SampleModel();
         model.setId(9999);
         model.setName("안녕!!");
-        return ResponseEntity.ok().headers(new DemoHeaders(EnumResult.SUCCESS, MediaType.APPLICATION_JSON_VALUE)).body(model);
+        return ResponseEntity.ok().headers(new DemoHeaders(EnumResult.SUCCESS)).body(model);
     }
 }
