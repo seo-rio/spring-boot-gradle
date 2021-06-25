@@ -11,3 +11,6 @@ Framework
 Template Engine
 - Thymeleaf :  2.5.1
 - Thymeleaf-layout :  2.5.1
+
+API Doc
+- Swagger : 3.0.0
