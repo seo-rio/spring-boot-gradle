@@ -9,8 +9,8 @@ Framework
 - Spring Boot Version : 2.5.1
 
 Template Engine
-- Thymeleaf :  2.5.1
-- Thymeleaf-layout :  2.5.1
+- Thymeleaf : 3.0.12
+- Thymeleaf-layout : 2.3.0
 
 API Doc
 - Swagger : 3.0.0
